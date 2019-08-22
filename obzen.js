@@ -1,4 +1,4 @@
-var ftate = (function() {
+var obzen = (function() {
     'use strict';
     
     var controlsContainer;
