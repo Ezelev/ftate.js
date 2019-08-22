@@ -1,6 +1,6 @@
 # obzen.js
 
-Ftate.js is a simple js plugin for filtering elements.
+Obzen.js is a simple js plugin for filtering elements.
 
   - native js
   - uses data-attributes
