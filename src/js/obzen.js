@@ -13,11 +13,8 @@
 	
 	var Obzen = function (options) {
 		var self = this;
-
 		var _privateArgs = {
-
 			coof: options.coof
-			
 		}
 
 		self.publicArgs = {
