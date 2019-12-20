@@ -1,4 +1,4 @@
-# obzen.js
+### obzen.js
 
 Obzen.js is a simple js plugin for filtering elements.
 
