@@ -1,5 +1,5 @@
 
-(function (root, factory) { 
+(function (root, factory) {
 	if (typeof define === 'function' && define.amd) {
 		define(factory);
 	} else if (typeof exports === 'object') {
@@ -10,59 +10,51 @@
 })(this, function () {
 
 	'use strict';
-	
+
 	var Obzen = function (options) {
 		var self = this;
-		var _privateArgs = {
-			coof: options.coof
-		}
-
+		// public args
 		self.publicArgs = {
-
 			controlsContainer: options.controlsContainer,
 			itemsContainer: options.itemsContainer
-
 		}
-
+		// public methods
 		self.publicMethods = {
 
 			getControlsContaner: function(){
-				console.log(controlsContainer);
+				console.log(_controlsContainer);
 			},
 			getitemsContainer: function(){
-				console.log(controlsContainer);
+				console.log(_controlsContainer);
 			},
-			getCoof: function(){
-				console.log(_privateArgs.coof);
-			}
 
 		}
-		
-		// ---------------------------------------------------- //
-		var controlsContainer;
-		var itemsContainer;
+		// ---- private args ----- //
+		var _privateArgs = {}
+		var _controlsContainer;
+		var _itemsContainer;
 		var allItems;
 		var theme;
 		var filterOptions = ["all"];
-
-		function onlyUnique(value, index, self) { 
+		// private methods //
+		var _onlyUnique = function(value, index, self) {
 			return self.indexOf(value) === index;
 		}
-		
-		function arrayUnique(incomingArray) { 
-			var unique = incomingArray.filter( onlyUnique );
+
+		var _arrayUnique = function(incomingArray) {
+			var unique = incomingArray.filter( _onlyUnique );
 			return unique;
 		}
 
-		function getFilterValue(element) {
+		var _getFilterValue = function(element) {
 			return element.getAttribute('data-ftate-group');
 		}
 
-		function getLinkedElements(filterVal) {
+		var _getLinkedElements = function (filterVal) {
 			if(filterVal == "all") {
-				showAll(itemsContainer);
+				showAll(_itemsContainer);
 			} else {
-				showAll(itemsContainer);
+				showAll(_itemsContainer);
 				var elementsToFilter = document.querySelectorAll('[data-ftate-value="'+ filterVal + '"]');
 				elementsToFilter = Array.from(elementsToFilter);
 				allItems = Array.from(allItems);
@@ -83,34 +75,34 @@
 				//allItems[i].style.display = 'inline-block';
 				// allItems[i].classList.remove("obzen-hidden-visual");
 				allItems[i].classList.remove("obzen-hidden");
-				
+
 			}
 		}
 
 		var handleClick = function () {
-			var filterControlWrapper = document.getElementById(controlsContainer);
+			var filterControlWrapper = document.getElementById(_controlsContainer);
 			var controlBtns = filterControlWrapper.getElementsByTagName("button");
 			console.log(controlBtns);
 			for (var i = 0; i < controlBtns.length; i++) {
 				controlBtns[i].addEventListener('click', function() {
-					var filterValue = getFilterValue(this);
-					getLinkedElements(filterValue);
+					var filterValue = _getFilterValue(this);
+					_getLinkedElements(filterValue);
 				});
 			}
 		}
 
-		var renderControls = function (controlsContainer) {
+		var renderControls = function (_controlsContainer) {
 			var filterVal;
 			for (var i = 0; i < allItems.length; i++) {
 				filterVal = allItems[i].getAttribute('data-ftate-value');
 				filterOptions.push(filterVal);
-				
+
 			}
-			filterOptions = arrayUnique(filterOptions);
+			filterOptions = _arrayUnique(filterOptions);
 
 			var ul = document.createElement('ul');
-			var control = document.getElementById(controlsContainer);
-			// TODO implement style themes 
+			var control = document.getElementById(_controlsContainer);
+			// TODO implement style themes
 			// TODO make css rules for themes
 			control.classList.add("obzen-ctrls-" + theme);
 			//
@@ -127,21 +119,21 @@
 		}
 
 		var init = function (parameters) {
-			
-			controlsContainer = parameters.controlsContainer;
-			itemsContainer = parameters.itemsContainer;
+
+			_controlsContainer = parameters.controlsContainer;
+			_itemsContainer = parameters.itemsContainer;
 			theme = parameters.theme;
 
-			showAll(itemsContainer);
-			renderControls(controlsContainer);
+			showAll(_itemsContainer);
+			renderControls(_controlsContainer);
 			handleClick();
 		}
-		
+
 		init(options);
 	// ---------------------------------------------------- //
 	}
 
-	
+
 	return Obzen;
-	
+
 });
