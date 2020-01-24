@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var gallery = new Obzen({
         controlsContainer: "ctrls",
         itemsContainer: "items",
-        // theme: "default",
+        theme: "default",
     });
 
     console.log(gallery);
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var gallery2 = new Obzen({
         controlsContainer: "ctrls2",
         itemsContainer: "items2",
-        // theme: "green"
+        theme: "green"
     });
 
     console.log(gallery2);
