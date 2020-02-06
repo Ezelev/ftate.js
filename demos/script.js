@@ -6,14 +6,14 @@ document.addEventListener('DOMContentLoaded', function() {
         //theme: "default",
     });
 
-    console.log(gallery);
+    //console.log(gallery);
 
-    var gallery2 = new Obzen({
-        controlsContainer: "ctrls2",
-        itemsContainer: "items2",
-        theme: "green"
-    });
-
-    console.log(gallery2);
+    // var gallery2 = new Obzen({
+    //     controlsContainer: "ctrls2",
+    //     itemsContainer: "items2",
+    //     theme: "green"
+    // });
+    //
+    // console.log(gallery2);
 
 });
