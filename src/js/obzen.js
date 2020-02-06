@@ -19,16 +19,29 @@
 			itemsContainer: options.itemsContainer
 		}
 		// public methods
-		self.publicMethods = {
-
-			getControlsContaner: function(){
-				console.log(_controlsContainer);
-			},
-			getitemsContainer: function(){
-				console.log(_controlsContainer);
-			},
-
+		self.getControlsContaner = function(){
+			console.log(_controlsContainer);
 		}
+		self.getitemsContainer = function(){
+			console.log(_controlsContainer);
+		}
+		self.destroy = function() {
+			console.log("destroying obzen instance");
+			self.destroy();
+		}
+		// self.publicMethods = {
+		//
+		// 	getControlsContaner: function(){
+		// 		console.log(_controlsContainer);
+		// 	},
+		// 	getitemsContainer: function(){
+		// 		console.log(_controlsContainer);
+		// 	},
+		// 	destroy: function() {
+		// 		console.log("destroying obzen instance");
+		// 	}
+		//
+		// }
 		// ---- private args ----- //
 		var _privateArgs = {}
 		var _controlsContainer;

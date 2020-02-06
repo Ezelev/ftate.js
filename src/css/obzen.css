@@ -3,25 +3,54 @@ div {
 
 }
 
+.red {
+	background-color: red;
+}
+.green {
+	background-color: green;
+}
+.blue {
+	background-color: blue;
+}
+.yellow {
+	background-color: yellow;
+}
+
 .square .item {
 	/* display:flex; */
 	width: 300px;
 	height: 300px;
+	box-sizing: border-box;
 	border: 1px solid black;
 	opacity: 1;
 	transition: opacity 1s, height 0;
 	text-align: center;
 	vertical-align: middle;
-	line-height: 300px;   
+	line-height: 300px;
+	transition: height .2s, width .2s, padding .2s, visibility .2s, opacity 0.2s ease-out;
 }
 
-.obzen-hidden {
+/* .obzen-hidden {
 	display:none;
+} */
+
+.square .obzen-hidden {
+  visibility:hidden;
+	opacity:0;
+	height:0;
+	width:0;
+	padding:0;
+	border: none;
+  position: absolute;
+	/* position: absolute;
+	left: 0px;
+	top: 0px;
+	display: none; */
 }
 
-.obzen-hidden-visual {
+/* .obzen-hidden-visual {
 	opacity:0;
-}
+} */
 
 /* Obzen themes */
 .obzen-ctrls-default button {
