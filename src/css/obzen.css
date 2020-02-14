@@ -3,6 +3,11 @@ div {
 
 }
 
+img {
+	width: 300px;
+	height: 300px;
+}
+
 .red {
 	background-color: red;
 }
@@ -16,8 +21,11 @@ div {
 	background-color: yellow;
 }
 
+
+
 .square .item {
 	/* display:flex; */
+	margin-top: 4px;
 	width: 300px;
 	height: 300px;
 	box-sizing: border-box;
