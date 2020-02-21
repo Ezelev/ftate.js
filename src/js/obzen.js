@@ -46,6 +46,7 @@
 		var _privateArgs = {}
 		var _controlsContainer;
 		var _itemsContainer;
+		var _animate;
 		var _allItems;
 		var _theme;
 		var _filterOptions = ["all"];
@@ -140,6 +141,15 @@
 
 			_controlsContainer = parameters.controlsContainer;
 			_itemsContainer = parameters.itemsContainer;
+			_animate = parameters.animate;
+			// TODO make a function
+			if(_animate) {
+				var elementList = document.querySelectorAll(".items div");
+				for (var i = 0; i < elementList.length; ++i) {
+					elementList[i].classList.add("obzen-animate");
+				}
+			}
+			//
 			if(typeof parameters.theme != "undefined"){
 				 _theme = parameters.theme;
 			}

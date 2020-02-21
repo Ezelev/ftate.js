@@ -35,6 +35,10 @@ img {
 	text-align: center;
 	vertical-align: middle;
 	line-height: 300px;
+	/* transition: height .2s, width .2s, padding .2s, visibility .2s, opacity 0.2s ease-out; */
+}
+
+.square .item.obzen-animate{
 	transition: height .2s, width .2s, padding .2s, visibility .2s, opacity 0.2s ease-out;
 }
 
