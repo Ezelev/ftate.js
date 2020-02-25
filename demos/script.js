@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var gallery = new Obzen({
         controlsContainer: "ctrls",
         itemsContainer: "items",
-        animate: true
+        animate: 123
         //theme: "default",
     });
     //console.log(gallery);
