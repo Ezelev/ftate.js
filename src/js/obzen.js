@@ -137,24 +137,32 @@
 			}
 		}
 
-		var init = function (parameters) {
-
-			_controlsContainer = parameters.controlsContainer;
-			_itemsContainer = parameters.itemsContainer;
-			_animate = parameters.animate;
-			// TODO make a function
-			if(_animate) {
+		var _toggleAnimate = function (enable) {
+			if( _animate === true) {
 				var elementList = document.querySelectorAll(".items div");
 				for (var i = 0; i < elementList.length; ++i) {
 					elementList[i].classList.add("obzen-animate");
 				}
 			}
+		}
+
+		var init = function (parameters) {
+
+			_controlsContainer = parameters.controlsContainer;
+			_itemsContainer = parameters.itemsContainer;
 			//
+			if(typeof parameters.animate === "boolean") {
+				_animate = parameters.animate;
+			} else {
+				console.log("Obzen warning: parameter 'animate' must be of type 'boolean'.");
+			}
+
 			if(typeof parameters.theme != "undefined"){
 				 _theme = parameters.theme;
 			}
 			_showAll(_itemsContainer);
 			_renderControls(_controlsContainer);
+			_toggleAnimate();
 			_handleClick();
 		}
 
