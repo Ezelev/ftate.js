@@ -116,6 +116,9 @@
 
 			var ul = document.createElement('ul');
 			var control = document.getElementById(_controlsContainer);
+			// add control class
+			control.classList.add("obzen-ctrls");
+			//
 			// TODO implement style _themes
 			// TODO make css rules for _themes
 			if(_theme) {

@@ -106,3 +106,19 @@ img {
 .obzen-ctrls-default ul li,.obzen-ctrls-green ul li {
 	display: inline;
 }
+
+#ctrls ul {
+  list-style-type: none;
+	list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#ctrls li {
+  float: left;
+}
+
+#ctrls button {
+  padding: 15px;
+}
