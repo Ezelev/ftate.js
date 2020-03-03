@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     //
     var gallery = new Obzen({
         controlsContainer: "ctrls",
+        sortingContainer: "sortCtrls",
         itemsContainer: "items",
         animate: 123
         //theme: "default",

@@ -45,6 +45,7 @@
 		// ---- private args ----- //
 		var _privateArgs = {}
 		var _controlsContainer;
+		var _sortingControlsContainer;
 		var _itemsContainer;
 		var _animate;
 		var _allItems;
@@ -140,6 +141,41 @@
 			}
 		}
 
+		var _renderSortControls = function (_sortingControlsContainer) {
+			var filterVal;
+			for (var i = 0; i < _allItems.length; i++) {
+				filterVal = _allItems[i].getAttribute('data-ftate-value');
+				_filterOptions.push(filterVal);
+
+			}
+			_filterOptions = _arrayUnique(_filterOptions);
+
+			var ul = document.createElement('ul');
+			var control = document.getElementById(_controlsContainer);
+			// add control class
+			control.classList.add("obzen-ctrls");
+			//
+			// TODO implement style _themes
+			// TODO make css rules for _themes
+			if(_theme) {
+					control.classList.add("obzen-ctrls-" + _theme);
+			} else {
+					control.classList.add("obzen-ctrls");
+			}
+
+			//
+			control.appendChild(ul);
+			for (var i=0; i<_filterOptions.length; i++){
+
+				var li = document.createElement('li');
+				var btn = document.createElement('button');
+				btn.setAttribute('data-ftate-group', _filterOptions[i]);
+				btn.innerHTML = _filterOptions[i];
+				li.appendChild(btn);
+				ul.appendChild(li);
+			}
+		}
+
 		var _toggleAnimate = function (enable) {
 			if( _animate === true) {
 				var elementList = document.querySelectorAll(".items div");
@@ -152,6 +188,7 @@
 		var init = function (parameters) {
 
 			_controlsContainer = parameters.controlsContainer;
+			_sortingControlsContainer = parameters.sortingContainer;
 			_itemsContainer = parameters.itemsContainer;
 			//
 			if(typeof parameters.animate === "boolean") {
@@ -165,6 +202,7 @@
 			}
 			_showAll(_itemsContainer);
 			_renderControls(_controlsContainer);
+			_renderSortControls(_sortingControlsContainer);
 			_toggleAnimate();
 			_handleClick();
 		}
