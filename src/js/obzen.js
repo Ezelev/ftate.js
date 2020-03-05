@@ -106,6 +106,29 @@
 			}
 		}
 
+		var _sortElements = function (sortValue) {
+				var parentNode = document.getElementsByClassName("items")[0];
+				var elementsToSort = document.querySelectorAll('[data-ftate-value="'+ sortValue + '"]');
+
+				var divs = document.querySelectorAll('div');
+
+				[].forEach.call(elementsToSort, function(el) {
+				    parentNode.prepend(el);
+				});
+		}
+
+		var _handleSortClick = function () {
+			var sortControlWrapper = document.getElementById(_sortingControlsContainer);
+			var controlBtns = sortControlWrapper.getElementsByTagName("button");
+			console.log(controlBtns);
+			for (var i = 0; i < controlBtns.length; i++) {
+				controlBtns[i].addEventListener('click', function() {
+						var sortValue = _getFilterValue(this);
+						_sortElements(sortValue);
+				});
+			}
+		}
+
 		var _renderControls = function (_controlsContainer) {
 			var filterVal;
 			for (var i = 0; i < _allItems.length; i++) {
@@ -151,7 +174,7 @@
 			_filterOptions = _arrayUnique(_filterOptions);
 
 			var ul = document.createElement('ul');
-			var control = document.getElementById(_controlsContainer);
+			var control = document.getElementById(_sortingControlsContainer);
 			// add control class
 			control.classList.add("obzen-ctrls");
 			//
@@ -205,6 +228,7 @@
 			_renderSortControls(_sortingControlsContainer);
 			_toggleAnimate();
 			_handleClick();
+			_handleSortClick();
 		}
 
 		init(options);

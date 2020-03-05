@@ -107,7 +107,7 @@ img {
 	display: inline;
 }
 
-#ctrls ul {
+#ctrls ul, #sortCtrls ul{
   list-style-type: none;
 	list-style: none;
   margin: 0;
@@ -115,10 +115,10 @@ img {
   overflow: hidden;
 }
 
-#ctrls li {
+#ctrls li, #sortCtrls li {
   float: left;
 }
 
-#ctrls button {
+#ctrls button, #sortCtrls button {
   padding: 15px;
 }
