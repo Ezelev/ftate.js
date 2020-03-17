@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
         controlsContainer: "ctrls",
         sortingContainer: "sortCtrls",
         itemsContainer: "items",
-        animate: 123
+        animate: true
         //theme: "default",
     });
     //console.log(gallery);
