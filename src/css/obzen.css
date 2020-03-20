@@ -1,6 +1,6 @@
-div {
+/* div {
 	display: inline-block;
-}
+} */
 
 img {
 	width: 300px;
@@ -20,11 +20,15 @@ img {
 	background-color: yellow;
 }
 
-
+.items {
+	display: flex;
+	flex-wrap: wrap;
+}
 
 .square .item {
 	/* display:flex; */
-	margin-top: 4px;
+	margin: 4px;
+	/* margin-top: 4px; */
 	width: 300px;
 	height: 300px;
 	box-sizing: border-box;
