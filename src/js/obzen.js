@@ -113,7 +113,11 @@
 				var divs = document.querySelectorAll('div');
 
 				[].forEach.call(elementsToSort, function(el) {
-				    parentNode.prepend(el);
+						el.classList.add("obzen-hidden");
+  					parentNode.prepend(el);
+						setTimeout(function() {
+							el.classList.remove("obzen-hidden");
+						},0);
 				});
 		}
 
